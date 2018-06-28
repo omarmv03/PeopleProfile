@@ -1,0 +1,9 @@
+.content-search-box {
+    display: flex; 
+}
+.content-search-box .label {
+    margin-right: 10px;
+}
+.content-search-box .input-box {
+    
+}

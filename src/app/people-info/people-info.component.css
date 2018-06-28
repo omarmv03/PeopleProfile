@@ -1,0 +1,28 @@
+.content-people-info {
+    margin: 0 auto;
+    width: 70%;
+    display: flex;
+}
+
+.content-people-info .app-search-box {
+    margin: 10px;
+    width: 50%; 
+    margin: 0 auto; 
+    text-align: left;
+}
+
+.content-people-info .users-info {
+    margin: 10px;
+    width: 50%; 
+    margin: 0 auto; 
+    text-align: left;
+}
+.content-people-info .users-info span{
+    margin-right: 10px;
+}
+.content-people-info .users-info .box{
+    border: 1px solid lightseagreen;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
