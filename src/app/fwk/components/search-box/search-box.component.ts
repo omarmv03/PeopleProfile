@@ -25,13 +25,12 @@ export class SearchBoxComponent extends AbstractValueAccessor implements OnInit 
   @Output() itemClick =     new EventEmitter<any>();
   @Output() search    =     new EventEmitter<any>();
   /**VARS */
-  //_input: string;
   _values :                 User[];
   isActive:                 boolean = true;
 
   constructor(private _listUsersService: ListUsersService) {
     super();
-   }
+  }
 
   ngOnInit() {
     this._listUsersService.getUsers().subscribe((data) => {

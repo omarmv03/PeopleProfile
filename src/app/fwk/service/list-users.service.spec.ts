@@ -1,11 +1,14 @@
 import { TestBed, inject } from '@angular/core/testing';
-
+import { HttpModule } from '@angular/http';
 import { ListUsersService } from './list-users.service';
+import { ServerService } from './server.service';
 
 describe('ListUsersService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ListUsersService]
+      imports: [HttpModule],
+      providers: [ListUsersService,
+                  ServerService]
     });
   });
 

@@ -21,7 +21,10 @@
         <p><span><u>Blog:</u></span><span><a [href]="user.blog">{{user.blog}}</a></span></p>
         <p><span><u>Title:</u></span><span>{{user.title}}</span></p>
       </div>
-      <div *ngIf="!(user && user.id || inputValue.length == 0)"><span>User not found</span></div>
+      <div *ngIf="!(user && user.id || inputValue.length == 0)"
+            class="not-found">
+            <span>User not found</span>
+      </div>
     </div>
 
     <div class="by">Created by: <a href="mailto:omar.m.villalba@gmail.com">Omar Villalba</a>, 2018</div>

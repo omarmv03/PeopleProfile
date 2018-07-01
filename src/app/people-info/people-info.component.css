@@ -21,6 +21,13 @@
     word-wrap: break-word;
     padding: 0 20px;
 }
+.content-people-info .users-info .not-found {
+    text-align: center;
+    margin-bottom: 50%;
+}
+.content-people-info .users-info .not-found span{
+    color: red;
+}
 .content-people-info .users-info span{
     margin-right: 10px;
 }
@@ -29,6 +36,11 @@
     width: 20px;
     height: 20px;
     display: inline-block;
+}
+@media screen and (max-width: 750px) {
+    .content-people-info .by{
+        display: grid;
+    }
 }
 @media screen and (max-width: 550px) {
     .content-people-info{
@@ -41,5 +53,9 @@
     }
     .content-people-info .app-search-box {
         width: 100%;
+    }
+    .content-people-info .by{
+        display: block;
+        position: inherit;
     }
 }

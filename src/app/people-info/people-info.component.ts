@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { User } from '../fwk/interface/user';
 
 @Component({
@@ -6,7 +6,7 @@ import { User } from '../fwk/interface/user';
   templateUrl: './people-info.component.html',
   styleUrls: ['./people-info.component.css']
 })
-export class PeopleInfoComponent implements OnInit {
+export class PeopleInfoComponent {
 
   /**VARS */
   labelInput:   string = "Enter Username: ";
@@ -14,10 +14,6 @@ export class PeopleInfoComponent implements OnInit {
   inputValue:   string = "";
   
   constructor() { }
-
-  ngOnInit() {
-    //
-  }
 
   onItemClick(ev) {
     this.user = ev;

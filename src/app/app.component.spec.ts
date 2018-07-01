@@ -1,10 +1,15 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { PeopleInfoComponent } from './people-info/people-info.component';
+import { FwkModule } from './fwk/fwk.module';
+import { FormsModule } from '@angular/forms';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [FwkModule,FormsModule],
       declarations: [
-        AppComponent
+        AppComponent,
+        PeopleInfoComponent
       ],
     }).compileComponents();
   }));
@@ -18,13 +23,13 @@ describe('AppComponent', () => {
   it(`should have as title 'app'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toMatch(/app/i);
+    expect(app.title).toEqual('Users List');
   }));
 
   it('should render title in a h1 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toMatch(/app/i);
+    expect(compiled.querySelector('h1').textContent).toMatch('Welcome to Users List!');
   }));
 });

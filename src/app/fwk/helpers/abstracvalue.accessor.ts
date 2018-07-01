@@ -54,9 +54,7 @@ export abstract class AbstractValueAccessor implements ControlValueAccessor {
     onTouched() {
       this._onTouchedCallback(null);
     }
-    onChange = (_:any) => {
-      //
-    }
+    onChange = (_:any) => { }
 
     registerOnChange(fn: (_: any) => void): void { this.onChange = fn; }
 
