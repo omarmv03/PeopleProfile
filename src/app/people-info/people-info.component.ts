@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { ListUserProxyService } from '../fwk/service/list-user-proxy.service';
 import { User } from '../fwk/interface/user';
 
 @Component({
@@ -10,17 +8,19 @@ import { User } from '../fwk/interface/user';
 })
 export class PeopleInfoComponent implements OnInit {
 
-  labelInput: string = "Ingrese el usuario: "
-  users: User[]; 
-  subs: Subscription;
-
-  constructor(private service: ListUserProxyService) { }
+  /**VARS */
+  labelInput:   string = "Enter Username: ";
+  user:         User; 
+  inputValue:   string = "";
+  
+  constructor() { }
 
   ngOnInit() {
-    this.subs = this.service.getUserInfo().subscribe( data => {
-      this.users = data.json();
-      }
-    );
+    //
+  }
+
+  onItemClick(ev) {
+    this.user = ev;
   }
 
 }

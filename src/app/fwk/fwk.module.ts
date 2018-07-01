@@ -1,21 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { SearchBoxComponent } from './components/search-box/search-box.component';
-import { ListUserProxyService } from './service/list-user-proxy.service';
 import { ListUsersService } from './service/list-users.service';
+import { ServerService } from './service/server.service';
+import { HttpModule } from '@angular/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FilterPipe } from './pipes/filter.pipe';
+import { ClickOutsideDirective } from './directives/clickOutside.directive';
 
 @NgModule({
   declarations: [
-    SearchBoxComponent
+    SearchBoxComponent,
+    FilterPipe,
+    ClickOutsideDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
-    SearchBoxComponent
+    SearchBoxComponent,
+    FilterPipe,
+    ClickOutsideDirective
   ],
-  providers: [ListUserProxyService, ListUsersService],
+  providers: [ListUsersService,
+              ServerService],
   bootstrap: []
 })
 export class FwkModule { }

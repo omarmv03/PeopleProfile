@@ -1,11 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ServerService } from './fwk/service/server.service';
 import { AppComponent } from './app.component';
 import { PeopleInfoComponent } from './people-info/people-info.component';
 import { FwkModule } from './fwk/fwk.module';
-import { ListUserProxyService } from './fwk/service/list-user-proxy.service';
-import { HttpModule } from '@angular/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,9 +14,10 @@ import { HttpModule } from '@angular/http';
   imports: [
     BrowserModule,
     FwkModule,
-    HttpModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [ListUserProxyService],
+  providers: [ServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

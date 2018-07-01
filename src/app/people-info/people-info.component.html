@@ -1,29 +1,29 @@
-<div class="content-people-info">
-  <div class="app-search-box">
-    <app-search-box [label]="labelInput">
-    </app-search-box>
-  </div>
+<div class="content-people-info" >
 
-  <div class="users-info">
-    <div id="user-{{i}}" *ngFor="let user of users; let i=index;">
-      <p><span><u>ID:</u></span><span>{{user.id}}</span></p>
-      <p><span><u>First Name:</u></span><span>{{user.first_name}}</span></p>
-      <p><span><u>Last Name:</u></span><span>{{user.last_name}}</span></p>
-      <p><span><u>Username:</u></span><span>{{user.username}}</span></p>
-      <p><span><u>City:</u></span><span>{{user.city}}</span></p>
-      <p><span><u>Country:</u></span><span>{{user.country}}</span></p>
-      <p><span><u>Favourite Color:</u></span><span class="box" [ngStyle]="{'background-color':user.fav_color}"></span></p>
-      <p><span><u>Blog:</u></span><span><a [href]="user.blog">{{user.blog}}</a></span></p>
-      <p><span><u>Title:</u></span><span>{{user.title}}</span></p>
+    <div class="app-search-box">
+      <app-search-box [id]="'inputBox'"
+                      [(ngModel)]="inputValue"
+                      [label]="labelInput"
+                      (itemClick)="onItemClick($event)"
+                      (search)="onItemClick($event)">
+      </app-search-box>
     </div>
-  </div>
-</div>
 
-username: string,
-email: string,
-city: string,
-country:string,
-fav_color:string,
-blog:string,
-title:string
-}
+    <div class="users-info">
+      <div *ngIf="user && user.id">
+        <p><span><u>ID:</u></span><span>{{user.id}}</span></p>
+        <p><span><u>First Name:</u></span><span>{{user.first_name}}</span></p>
+        <p><span><u>Last Name:</u></span><span>{{user.last_name}}</span></p>
+        <p><span><u>Username:</u></span><span>{{user.username}}</span></p>
+        <p><span><u>City:</u></span><span>{{user.city}}</span></p>
+        <p><span><u>Country:</u></span><span>{{user.country}}</span></p>
+        <p><span><u>Favourite Color:</u></span><span class="box" [ngStyle]="{'background-color':user.fav_color}"></span></p>
+        <p><span><u>Blog:</u></span><span><a [href]="user.blog">{{user.blog}}</a></span></p>
+        <p><span><u>Title:</u></span><span>{{user.title}}</span></p>
+      </div>
+      <div *ngIf="!(user && user.id || inputValue.length == 0)"><span>User not found</span></div>
+    </div>
+
+    <div class="by">Created by: <a href="mailto:omar.m.villalba@gmail.com">Omar Villalba</a>, 2018</div>
+
+</div>

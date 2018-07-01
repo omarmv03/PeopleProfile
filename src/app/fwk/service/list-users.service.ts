@@ -1,29 +1,15 @@
 import { Injectable } from '@angular/core';
-import { ListUserProxyService } from './list-user-proxy.service';
-import { Observable } from 'rxjs';
+import { ServerService } from './server.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ListUsersService {
 
-  constructor(private proxy: ListUserProxyService) { }
+  constructor(private httpService: ServerService) { }
 
-  getUsers(): Observable<any> {
-    return this.proxy.getUserInfo().map(
-      (response) => {
-        return response;
-      }
-    );
-  } 
-
-  getUserByName(name:string){
-    var a=  this.proxy.getUserInfo().map(
-      (response) => {
-        const data = response.json();
-        console.log(data);
-      }
-    );
-    console.log(a);
+  getUsers(){
+    var apiUsers: string = 'http://localhost:4200/assets/users.json';
+    return this.httpService._get(apiUsers);
   }  
 }
